@@ -1,0 +1,274 @@
+:root {
+  --black-color: #000000;
+  --question-bg: #f7f8fb;
+  --old-price: #a3a3a3;
+  --open-question: #d7ecec;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: var(--black-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 40px 60px;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+}
+
+.page-description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px 20px;
+  }
+}
+
+.card {
+  max-width: 300px;
+
+  @media (max-width: 768px) {
+    max-width: 158px;
+  }
+}
+
+.card-photo {
+  max-height: 377px;
+  max-width: 300px;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    max-height: 199px;
+    max-width: 158px;
+    margin-bottom: 10px;
+  }
+}
+
+.card-photo.fade-out {
+  opacity: 0;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.22;
+  margin-bottom: 2px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.card-description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.old-price {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--old-price);
+  text-decoration: line-through;
+
+  margin-right: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.new-price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.questions-section {
+  margin-top: 120px;
+  display: grid;
+  grid-template-areas:
+    "t t q"
+    ". . q"
+    ". . q";
+  gap: 80px;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    display: block;
+  }
+}
+
+.text-container {
+  grid-area: t;
+}
+
+.questions-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+
+.questions-support {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 600px;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+}
+
+.card-container {
+  grid-area: q;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 640px;
+  min-height: 60px;
+  border-radius: 12px;
+  background: var(--question-bg);
+  transition: background 0.5s ease;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+
+  padding: 6px 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    max-width: 315px;
+    min-height: 64px;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+  }
+}
+
+.question-card:last-child {
+  margin-bottom: 0px;
+}
+
+.question-card.open {
+  background-color: var(--open-question);
+}
+
+.text-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  padding-top: 0;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.answer.visible {
+  display: block;
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 15px;
+}
